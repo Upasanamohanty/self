@@ -1,0 +1,34 @@
+import React from 'react';
+import { FaHome, FaBroom, FaBug, FaTshirt, FaTruckMoving, FaHeartbeat, FaFemale, FaCarSide, FaPaw, FaTools } from 'react-icons/fa';
+
+const services = [
+  { icon: <FaHome />, label: "Property Maintenance" },
+  { icon: <FaBroom />, label: "Cleaning Services" },
+  { icon: <FaBug />, label: "Pest control & Disinfection Services" },
+  { icon: <FaTshirt />, label: "Home Laundry Service" },
+  { icon: <FaTruckMoving />, label: "Movers" },
+  { icon: <FaHeartbeat />, label: "Home Health Care Services" },
+  { icon: <FaFemale />, label: "Home Beauty Service" },
+  { icon: <FaCarSide />, label: "Car Rental" },
+  { icon: <FaPaw />, label: "Home Pets Grooming Services" },
+  { icon: <FaTools />, label: "Automotive Service" }
+];
+
+const ServicesGrid = () => (
+  <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+    {services.map((service, index) => (
+      <div key={index} className="w-[310px] h-[286px] rounded-lg border p-4 flex flex-col items-center shadow-md">
+        <div className="text-4xl mb-2 bg-white p-4 rounded-full shadow-lg">{service.icon}</div>
+        <p className="mt-2">{service.label}</p>
+      </div>
+    ))}
+  </div>
+);
+
+const App = () => (
+  <div className="min-h-screen bg-white flex flex-col items-center justify-center p-5">
+    <ServicesGrid />
+  </div>
+);
+
+export default App;
