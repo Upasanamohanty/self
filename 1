@@ -1,0 +1,85 @@
+import React from 'react';
+import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from 'react-icons/fa';
+import { FaHome, FaBroom, FaBug, FaTshirt, FaTruckMoving, FaHeartbeat, FaFemale, FaCarSide, FaPaw, FaTools } from 'react-icons/fa';
+
+const services = [
+  { icon: <FaHome />, label: "Property Maintenance" },
+  { icon: <FaBroom />, label: "Cleaning Services" },
+  { icon: <FaBug />, label: "Pest control & Disinfection Services" },
+  { icon: <FaTshirt />, label: "Home Laundry Service" },
+  { icon: <FaTruckMoving />, label: "Movers" },
+  { icon: <FaHeartbeat />, label: "Home Health Care Services" },
+  { icon: <FaFemale />, label: "Home Beauty Service" },
+  { icon: <FaCarSide />, label: "Car Rental" },
+  { icon: <FaPaw />, label: "Home Pets Grooming Services" },
+  { icon: <FaTools />, label: "Automotive Service" }
+];
+
+const ServicesGrid = () => (
+  <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+    {services.map((service, index) => (
+      <div key={index} className="w-[310px] h-[286px] rounded-lg border p-4 flex flex-col items-center">
+        <div className="text-4xl mb-2">{service.icon}</div>
+        <p>{service.label}</p>
+      </div>
+    ))}
+  </div>
+);
+
+const Footer = () => {
+  return (
+    <div className="bg-teal-900 text-white py-10 px-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col items-center md:items-start">
+          <h1 className="text-3xl font-bold">Asrae</h1>
+          <div className="flex gap-4 mt-4">
+            <FaFacebookF className="text-xl cursor-pointer" />
+            <FaTwitter className="text-xl cursor-pointer" />
+            <FaPinterestP className="text-xl cursor-pointer" />
+            <FaInstagram className="text-xl cursor-pointer" />
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-bold">Quick Link</h2>
+          <ul className="mt-3 space-y-2">
+            <li>Home</li>
+            <li>Shop</li>
+            <li>Product</li>
+            <li>Articles</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-bold">Info</h2>
+          <ul className="mt-3 space-y-2">
+            <li>Shipping Policy</li>
+            <li>Return & Refund</li>
+            <li>Support</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-bold">Join Newsletter</h2>
+          <p className="mt-3">Subscribe our newsletter to get more deals, new products and promotions</p>
+          <div className="flex mt-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="p-2 rounded-l-lg w-full text-black"
+            />
+            <button className="bg-teal-500 px-4 py-2 rounded-r-lg">➜</button>
+          </div>
+        </div>
+      </div>
+      <ServicesGrid />
+
+      <div className="mt-8 text-center text-sm">
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
