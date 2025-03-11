@@ -1,0 +1,31 @@
+import React from 'react';
+
+const services = [
+  { image: '/images/electrical.jpg', label: "Electrical Issues" },
+  { image: '/images/plumbing.jpg', label: "Plumbing" },
+  { image: '/images/ac.jpg', label: "Air Conditioning" },
+  { image: '/images/carpentry.jpg', label: "Carpentry" },
+  { image: '/images/painting.jpg', label: "Painting" },
+  { image: '/images/appliance.jpg', label: "Appliance Repair" },
+  { image: '/images/renovation.jpg', label: "Renovation" },
+  { image: '/images/handyman.jpg', label: "Handyman" }
+];
+
+const ServicesGrid = () => (
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+    {services.map((service, index) => (
+      <div key={index} className="w-[310px] h-[286px] rounded-lg border p-4 flex flex-col items-center shadow-md">
+        <img src={service.image} alt={service.label} className="w-24 h-24 object-cover rounded-full mb-2" />
+        <p className="mt-2">{service.label}</p>
+      </div>
+    ))}
+  </div>
+);
+
+const App = () => (
+  <div className="min-h-screen bg-white flex flex-col items-center justify-center p-5">
+    <ServicesGrid />
+  </div>
+);
+
+export default App;
