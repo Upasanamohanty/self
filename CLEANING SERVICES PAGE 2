@@ -1,0 +1,100 @@
+import React from 'react';
+import cleaningImage from './images.app.goo.gl;
+
+const CleaningServicePage = () => {
+  return (
+    <div style={styles.page}>
+      <div style={styles.section}>
+        <img src={cleaningImage} alt="Cleaning Image" style={styles.image} />
+        <div style={styles.info}>
+          <h3>Floor Care Services</h3>
+          <p>Stripping, waxing, buffing, and polishing various types of flooring to maintain appearance and longevity.</p>
+          <span style={styles.priceTag}>$3.00 per square foot</span>
+          <div style={styles.added}>✔️ Added</div>
+        </div>
+      </div>
+
+      <div style={styles.packageSection}>
+        <h4>Packages</h4>
+        <div style={styles.package}>
+          <h3>Deep Cleaning</h3>
+          <p>Are you looking for basic details about starting a cleaning service, or do you need a description for an existing cleaning service?</p>
+          <span style={styles.price}>$10</span>
+        </div>
+        <div style={styles.package}>
+          <h3>Sofa Cleaning</h3>
+          <p>Are you looking for basic details about starting a cleaning service, or do you need a description for an existing cleaning service?</p>
+          <span style={styles.price}>$5</span>
+        </div>
+      </div>
+
+      <div style={styles.button}>Go With Packages <span style={styles.priceButton}>$18</span></div>
+    </div>
+  );
+};
+
+const styles = {
+  page: {
+    width: '833px',
+    height: '762px',
+    position: 'absolute',
+    top: '214px',
+    left: '304px',
+    backgroundColor: '#FFFFFF',
+    borderRadius: '10px',
+    padding: '20px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  },
+  section: {
+    display: 'flex',
+    marginBottom: '20px',
+  },
+  image: {
+    width: '332px',
+    height: '228px',
+    borderRadius: '10px',
+  },
+  info: {
+    marginLeft: '20px',
+  },
+  priceTag: {
+    color: 'purple',
+    fontWeight: 'bold',
+  },
+  added: {
+    backgroundColor: '#00C6A9',
+    color: '#fff',
+    borderRadius: '8px',
+    padding: '5px 10px',
+    display: 'inline-block',
+    marginTop: '10px',
+  },
+  packageSection: {
+    marginTop: '20px',
+  },
+  package: {
+    backgroundColor: '#f9f9f9',
+    borderRadius: '10px',
+    padding: '15px',
+    marginBottom: '10px',
+  },
+  price: {
+    color: 'purple',
+    fontWeight: 'bold',
+  },
+  button: {
+    backgroundColor: '#00C6A9',
+    borderRadius: '8px',
+    padding: '8px 24px',
+    color: '#fff',
+    fontWeight: 500,
+    fontSize: '16px',
+    textAlign: 'center',
+    marginTop: '20px',
+  },
+  priceButton: {
+    fontWeight: 'bold',
+  },
+};
+
+export default CleaningServicePage;
