@@ -1,0 +1,36 @@
+import React from 'react';
+
+const GoWithPackagesButton = () => {
+  return (
+    <div style={styles.button}>
+      Go With Packages <span style={styles.price}>$18</span>
+    </div>
+  );
+};
+
+const styles = {
+  button: {
+    width: '211px',
+    height: '46px',
+    position: 'absolute',
+    top: '881px',
+    left: '891px',
+    backgroundColor: '#00C6A9',
+    borderRadius: '8px',
+    padding: '8px 24px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '7px',
+    color: '#fff',
+    fontWeight: 500,
+    fontSize: '16px',
+    cursor: 'pointer',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  },
+  price: {
+    fontWeight: 'bold',
+  },
+};
+
+export default GoWithPackagesButton;
