@@ -1,0 +1,70 @@
+import React from 'react';
+
+const SofaCleaningCard = () => {
+  return (
+    <div style={styles.card}>
+      <h3 style={styles.title}>Sofa Cleaning</h3>
+      <p style={styles.description}>
+        Are you looking for basic details about starting a cleaning service, or
+        do you need a description for an existing cleaning service?
+      </p>
+      <div style={styles.footer}>
+        <span style={styles.duration}>2 Hrs</span>
+        <span style={styles.price}>$5</span>
+        <div style={styles.checkmark}>✔️</div>
+      </div>
+    </div>
+  );
+};
+
+const styles = {
+  card: {
+    width: '769px',
+    height: '148px',
+    position: 'absolute',
+    top: '546px',
+    left: '331px',
+    backgroundColor: '#f9f9f9',
+    borderRadius: '10px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    padding: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: '18px',
+  },
+  description: {
+    fontSize: '14px',
+    color: '#555',
+  },
+  footer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: '10px',
+  },
+  duration: {
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  price: {
+    color: 'purple',
+    fontWeight: 'bold',
+  },
+  checkmark: {
+    backgroundColor: '#00C6A9',
+    color: '#fff',
+    borderRadius: '50%',
+    width: '20px',
+    height: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '14px',
+  },
+};
+
+export default SofaCleaningCard;
