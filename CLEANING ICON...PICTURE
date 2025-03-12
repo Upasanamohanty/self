@@ -1,0 +1,31 @@
+import React from 'react';
+
+const DeepCleaningIcon = () => {
+  return (
+    <div style={{
+      width: '769px',
+      height: '148px',
+      position: 'absolute',
+      top: '546px',
+      left: '331px',
+      borderRadius: '10px',
+      border: '1px solid #E0E0E0',
+      padding: '20px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#fff'
+    }}>
+      <h2 style={{ margin: 0, color: '#333' }}>Deep Cleaning</h2>
+      <p style={{ color: '#555', margin: '10px 0' }}>
+        Are you looking for basic details about starting a cleaning service, or
+        do you need a description for an existing cleaning service?
+      </p>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span style={{ fontWeight: 'bold' }}>2 Hrs</span>
+        <span style={{ color: '#9C27B0', fontWeight: 'bold' }}>$10</span>
+        <span style={{ backgroundColor: '#00BCD4', color: '#fff', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✔️</span>
+      </div>
+    </div>
+  );
+};
+
+export default DeepCleaningIcon;
