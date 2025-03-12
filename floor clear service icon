@@ -1,0 +1,35 @@
+import React from 'react';
+
+const FloorCareIcon = () => {
+  return (
+    <div style={{
+      width: '384px',
+      height: '184px',
+      position: 'absolute',
+      top: '268px',
+      left: '707px',
+      borderRadius: '10px',
+      border: '1px solid #E0E0E0',
+      padding: '20px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#fff'
+    }}>
+      <h2 style={{ margin: 0, color: '#333' }}>Floor Care Services</h2>
+      <p style={{ color: '#555', margin: '10px 0' }}>
+        Stripping, waxing, buffing, and polishing various types of flooring to maintain appearance and longevity.
+      </p>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div>
+          <span style={{ color: '#FFA500', marginRight: '5px' }}>★★★★★</span>
+          <br />
+          <span style={{ color: '#9C27B0', fontWeight: 'bold' }}>$3.00 per square foot</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', backgroundColor: '#00BCD4', color: '#fff', borderRadius: '20px', padding: '5px 15px' }}>
+          ✔️ Added
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FloorCareIcon;
