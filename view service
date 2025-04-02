@@ -1,0 +1,102 @@
+"use client";
+
+import React, { useState, useCallback, useMemo } from "react";
+
+const initialImages = [
+  "/images/cleaning1.jpg",
+  "/images/cleaning2.jpg",
+  "/images/cleaning3.jpg",
+  "/images/cleaning4.jpg",
+];
+
+const ImageSlider = () => {
+  const [images, setImages] = useState(initialImages);
+  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleThumbnails = 3;
+
+  const scrollUp = useCallback(() => {
+    if (startIndex > 0) setStartIndex((prev) => prev - 1);
+  }, [startIndex]);
+
+  const scrollDown = useCallback(() => {
+    if (startIndex < images.length - visibleThumbnails) setStartIndex((prev) => prev + 1);
+  }, [startIndex, images.length]);
+
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === "ArrowUp") {
+        scrollUp();
+      } else if (e.key === "ArrowDown") {
+        scrollDown();
+      }
+    },
+    [scrollUp, scrollDown]
+  );
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const newImageUrl = URL.createObjectURL(file);
+      setImages((prev) => [newImageUrl, ...prev]);
+      setSelectedImage(newImageUrl);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center mt-4 md:mt-6 lg:mt-[6vw]">
+      <h1 className="text-xl font-bold">View Service</h1>
+      <div
+        className="relative flex flex-col bg-white p-[1rem] rounded-[2vw] shadow-lg mt-4 w-full md:w-[70.5rem] lg:w-[70.5rem]"
+        style={{ height: "25.625rem", gap: "0.68rem" }}
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
+      >
+        <h2 className="text-lg font-semibold mb-[0.5rem] text-center">Product Image</h2>
+        <div className="flex flex-col gap-[1vw] items-center justify-center h-full md:flex-row md:gap-[1vw] md:w-[100%] lg:h-full">
+          <div className="w-[65%] h-full flex items-center justify-center md:w-[60%] lg:w-[65%]">
+            <label className="w-full h-full flex items-center justify-center border-2 border-dashed border-gray-300 rounded-[2vw] cursor-pointer">
+              {selectedImage ? (
+                <img src={selectedImage} alt="Product" className="w-full h-full object-cover rounded-[2vw]" />
+              ) : (
+                <span className="text-gray-500">Click to upload</span>
+              )}
+              <input type="file" className="hidden" onChange={handleImageUpload} accept="image/*" />
+            </label>
+          </div>
+          <div className="flex flex-col items-center justify-between w-[15%] h-full p-[0.5rem] border border-gray-300 rounded-[1vw] md:w-[20%] lg:w-[15%]">
+            <button
+              onClick={scrollUp}
+              disabled={startIndex === 0}
+              aria-label="Scroll up"
+              className={`p-[0.5rem] bg-gray-300 rounded-full ${startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+            >
+              ▲
+            </button>
+            <div className="flex flex-col gap-[0.5vw] items-center overflow-hidden">
+              {useMemo(() => images.slice(startIndex, startIndex + visibleThumbnails), [images, startIndex]).map((image) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt="Thumbnail"
+                  className={`w-[4vw] h-[4vw] object-cover rounded-[1vw] cursor-pointer border-2 ${selectedImage === image ? "border-blue-500" : "border-transparent"}`}
+                  onClick={() => setSelectedImage(image)}
+                />
+              ))}
+            </div>
+            <button
+              onClick={scrollDown}
+              disabled={startIndex >= images.length - visibleThumbnails}
+              aria-label="Scroll down"
+              className={`p-[0.5rem] bg-gray-300 rounded-full ${startIndex >= images.length - visibleThumbnails ? "opacity-50 cursor-not-allowed" : ""}`}
+            >
+              ▼
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ImageSlider;
